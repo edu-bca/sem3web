@@ -13,27 +13,27 @@
         </td>
       </tr>
       <tr>
-        <td><button onclick="append('1')">1</button></td>
-        <td><button onclick="append('2')">2</button></td>
-        <td><button onclick="append('3')">3</button></td>
-        <td><button onclick="append('+')">+</button></td>
+        <td><button onclick="numbercall('1')">1</button></td>
+        <td><button onclick="numbercall('2')">2</button></td>
+        <td><button onclick="numbercall('3')">3</button></td>
+        <td><button onclick="numbercall('+')">+</button></td>
       </tr>
       <tr>
-        <td><button onclick="append('4')">4</button></td>
-        <td><button onclick="append('5')">5</button></td>
-        <td><button onclick="append('6')">6</button></td>
-        <td><button onclick="append('-')">-</button></td>
+        <td><button onclick="numbercall('4')">4</button></td>
+        <td><button onclick="numbercall('5')">5</button></td>
+        <td><button onclick="numbercall('6')">6</button></td>
+        <td><button onclick="numbercall('-')">-</button></td>
       </tr>
       <tr>
-        <td><button onclick="append('7')">7</button></td>
-        <td><button onclick="append('8')">8</button></td>
-        <td><button onclick="append('9')">9</button></td>
-        <td><button onclick="append('*')">*</button></td>
+        <td><button onclick="numbercall('7')">7</button></td>
+        <td><button onclick="numbercall('8')">8</button></td>
+        <td><button onclick="numbercall('9')">9</button></td>
+        <td><button onclick="numbercall('*')">*</button></td>
       </tr>
       <tr>
-        <td><button onclick="append('0')">0</button></td>
+        <td><button onclick="numbercall('0')">0</button></td>
         <td><button onclick="clearResult()">C</button></td>
-        <td><button onclick="append('/')">/</button></td>
+        <td><button onclick="numbercall('/')">/</button></td>
         <td><button onclick="calculate()">=</button></td>
       </tr>
       
@@ -41,7 +41,7 @@
   </center>
 
   <script>
-    function append(val) {
+    function numbercall(val) {
       document.getElementById("result").value += val;
     }
     function clearResult() {
@@ -54,3 +54,4 @@
   </script>
 </body>
 </html>
+
