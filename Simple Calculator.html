@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+</head>
+<body>
+  <center>
+    <h3>Calculator</h3>
+    <table border="1" cellpadding="10">
+      <tr>
+        <td colspan="4">
+          <input id="result" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td><button onclick="append('1')">1</button></td>
+        <td><button onclick="append('2')">2</button></td>
+        <td><button onclick="append('3')">3</button></td>
+        <td><button onclick="append('+')">+</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="append('4')">4</button></td>
+        <td><button onclick="append('5')">5</button></td>
+        <td><button onclick="append('6')">6</button></td>
+        <td><button onclick="append('-')">-</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="append('7')">7</button></td>
+        <td><button onclick="append('8')">8</button></td>
+        <td><button onclick="append('9')">9</button></td>
+        <td><button onclick="append('*')">*</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="append('0')">0</button></td>
+        <td><button onclick="clearResult()">C</button></td>
+        <td><button onclick="append('/')">/</button></td>
+        <td><button onclick="calculate()">=</button></td>
+      </tr>
+      
+    </table>
+  </center>
+
+  <script>
+    function append(val) {
+      document.getElementById("result").value += val;
+    }
+    function clearResult() {
+      document.getElementById("result").value = "";
+    }
+    function calculate() {
+      document.getElementById("result").value =
+        eval(document.getElementById("result").value);
+    }
+  </script>
+</body>
+</html>
