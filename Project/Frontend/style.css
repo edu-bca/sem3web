@@ -1,0 +1,229 @@
+
+:root {
+    --bg-color: #f9fafb;
+    --sidebar-bg: #ffffff;
+    --primary: #4f46e5;      
+    --success: #10b981;      
+    --danger: #ef4444;       
+    --border: #e5e7eb;
+    --text-dark: #111827;
+    --text-muted: #6b7280;
+    --font-main: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    font-family: var(--font-main);
+    display: grid;
+    grid-template-columns: 240px 1fr; 
+    min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+nav {
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover, nav a.active {
+    background: #f3f4f6;
+    color: var(--primary);
+}
+
+/* Dashboard Content Area */
+main {
+    padding: 40px 56px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+header h1 { margin: 0; font-size: 28px; font-weight: 700; }
+header p { margin: 5px 0 0; color: var(--text-muted); }
+
+/* Top Row: Summary Cards using Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.stat-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.stat-card span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.stat-card h3 {
+    margin: 8px 0 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Table Design */
+.table-container {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #fcfcfd;
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 18px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+}
+
+/* Status Labels & Buttons */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #f3f4f6;
+    color: var(--text-muted);
+}
+
+.btn-group { display: flex; gap: 8px; }
+
+.btn-action {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.btn-present:hover { border-color: var(--success); color: var(--success); }
+.btn-absent:hover { border-color: var(--danger); color: var(--danger); }
+
+/* --- Dynamic Status Colors --- */
+
+
+
+/* _________________________________________ */
+
+/* --- Student Management Page Add-ons --- */
+
+/* Styling for the Form */
+form {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+form input {
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+    width: 200px; /* Consistent width for inputs */
+}
+
+form input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+form button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+form button:hover {
+    background: #4338ca;
+}
+
+/* Styling for the Delete Action */
+.delete-link {
+    color: var(--danger);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: 0.2s;
+}
+
+.delete-link:hover {
+    background: #fef2f2;
+    border-color: var(--danger);
+}
+
+/* Helper for the "No Students Found" row */
+.empty-state {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 40px;
+}
